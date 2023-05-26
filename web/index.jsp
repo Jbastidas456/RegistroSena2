@@ -14,47 +14,13 @@
         <title>aprendiz</title>
     </head>
     <body>
-        <h1>Ingrese aprendiz</h1>
-    
-       <div class="container">    
-            <div class col-lg-6">
-                <form action="ControladorAprendiz">
-                 <label for="id">id</label>
-                 <input type="number" id="id" name="txtid"> 
-                    <br>
-                <label for="NumDoc">Digite su numero de documento</label>
-                <input type="text" id="Docu" name="txtdoc">
-
-                <br>
-                 <label for="nombres">Digite sus Nombres</label>
-                <input type="text" id="Nombrea" name="txtnom">
-                
-                
-
-                 <br>
-
-                 
-                 <label for="Apellido">Digite sus Apellidos</label>
-                <input type="text" id="Apellidoa" name="txtape">
-
-                
-
-                 <br>
-
-                <label for="correo">Digite su correo electronico</label>
-                <input type="text" id="correoa" name="txtcorreo">
-
-                 <br>
-
-                <label for="telefono">Digite su numero de telefono</label>
-                <input type="number" id="Numcontacto" name="txtcon">
-                
-                <input class="btn-btn-primary" type="submit" name="accion" value="AgregarP">
-
-                
-
-               </form>
-            </div>
-       </div>
+        <h1>Bienvenidos al Sistema</h1>
+        
+            <button class="btn-btn-primary" ><a href="http://localhost:8080/Gestionar/view/RAprendiz.jsp">REGISTRAR APRENDIZ</a></button>
+            
+            <button class="btn-btn-primary" ><a href="http://localhost:8080/Gestionar/view/FPrograma.jsp">REGISTRAR PROGRAMA</a></button>
+            
+            <button class="btn-btn-primary" ><a href="http://localhost:8080/Gestionar/view/Fficha.jsp">REGISTRAR FICHA</a></button>
+                   
       </body> 
 </html>

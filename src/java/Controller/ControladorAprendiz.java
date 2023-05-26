@@ -103,17 +103,18 @@ public class ControladorAprendiz extends HttpServlet {
         }else if(action.equalsIgnoreCase("EditarA")){
         
                 id=Integer.parseInt(request.getParameter("txtid"));
-                int documento=Integer.parseInt(request.getParameter("txtdoc")); 
+                int docu = Integer.parseInt(request.getParameter("txtdoc"));
                 String nombre=request.getParameter("txtnom"); 
                 String apellido =request.getParameter("txtape");
                 String correo =request.getParameter("txtcorreo"); 
                 int  contacto = Integer.parseInt(request.getParameter("txtcon")); 
-                p.setId(id);
-                p.setDocu(id);
+                
+                p.setDocu(docu);
                 p.setNombrea(nombre);
                 p.setApellidoa(apellido);
                 p.setCorreoa(correo);
                 p.setNumcontacto(contacto);
+                p.setId(id);
                 dao.actualizar(p);
                 
                 acceso=listar;

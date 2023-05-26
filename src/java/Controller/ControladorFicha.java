@@ -88,14 +88,16 @@ public class ControladorFicha extends HttpServlet {
             fdao.registroficha(f);
               acceso=listarfi; 
         
-       }//else if(action.equalsIgnoreCase("eliminar")){
+       }else if(action.equalsIgnoreCase("eliminarfi")){
         
-          //  int id=Integer.parseInt(request.getParameter("id"));
-           // p.setCodprograma(id);
-           // pdao.eliminarpro(id);
-            //acceso=listarpro;
+            int codf = Integer.parseInt(request.getParameter("txtcodficha"));
+
+            f.setCodFicha(codf);
+            fdao.eliminarficha(codf);
             
-        //}
+            acceso=listarfi;
+            
+        }
         
             
             RequestDispatcher view=request.getRequestDispatcher(acceso);

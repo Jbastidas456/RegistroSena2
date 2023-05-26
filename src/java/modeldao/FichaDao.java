@@ -9,8 +9,10 @@ import config.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import static jdk.nashorn.internal.runtime.Debug.id;
 import model.Ficha;
 
 /**
@@ -31,9 +33,32 @@ public class FichaDao implements MeFicha
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
+     @Override
     public List listaFichas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+ 
+        ArrayList<Ficha> lista = new ArrayList<Ficha>();
+        String sql ="select * from ficha ";  
+          try{
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);  
+            rs=ps.executeQuery();
+            while(rs.next())
+            {
+            Ficha f = new Ficha();
+            f.setCodFicha(rs.getInt("codficha"));
+            f.setCantiaprendices(rs.getInt("cantiaprendices"));
+            f.setCodprograma(rs.getInt("codprograma"));
+            f.setCodaprendiz(rs.getInt("doapre"));
+           
+            lista.add(f);
+           
+            }
+               
+               
+        }catch(Exception e)
+        {
+        }
+        return lista;
     }
 
     @Override
@@ -62,7 +87,16 @@ public class FichaDao implements MeFicha
 
     @Override
     public boolean eliminarficha(int cod) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql="delete from programa where codficha="+cod;
+        try{
+            con=cn.getConnection(); 
+            ps=con.prepareStatement(sql); 
+            ps.executeUpdate(); 
+            JOptionPane.showMessageDialog(null, "Ficha Eliminado");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Ficha no Eliminado");
+        }
+        return false;
     }
     
 }

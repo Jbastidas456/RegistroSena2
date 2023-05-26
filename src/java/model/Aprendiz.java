@@ -10,14 +10,6 @@ public class Aprendiz {
     public Aprendiz() {
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getDocu() {
         return Docu;
     }
@@ -57,6 +49,15 @@ public class Aprendiz {
     public void setCorreoa(String Correoa) {
         this.Correoa = Correoa;
     }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     
     
     

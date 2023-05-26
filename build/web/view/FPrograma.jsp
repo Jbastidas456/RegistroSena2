@@ -12,9 +12,7 @@
     </head>
     <body> 
         
-        <h1>Hello World!</h1>
-    </body> 
-      <h1 align="center">REGISTRO PROGRAMA</h1> 
+        <h1 align="center">REGISTRO PROGRAMA</h1> 
         <div class="container"></div> 
         <div class="col-lg-6"></div>  
         <form action="../ControladorPrograma">
@@ -26,4 +24,5 @@
             <br>  
             <input class="btn btn-danger" type="submit" name="accion" value="Agregarp"><br>
    </form> 
+  
 </html>
